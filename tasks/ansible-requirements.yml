@@ -1,0 +1,7 @@
+- name: Download all required Ansible roles
+  ansible.builtin.command: ansible-galaxy install -f -r roles/requirements.yml --roles-path=./roles
+  changed_when: false
+
+- name: Download all required Ansible collections
+  ansible.builtin.command: ansible-galaxy collection install -f -r collections/requirements.yml
+  changed_when: false
