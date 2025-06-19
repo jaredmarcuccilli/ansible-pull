@@ -1,3 +1,4 @@
+---
 - name: Download all required Ansible roles
   ansible.builtin.command: ansible-galaxy install -f -r roles/requirements.yml --roles-path=./roles
   changed_when: false
