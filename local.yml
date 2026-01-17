@@ -3,6 +3,6 @@
   hosts: localhost
   connection: local
   tasks:
-    - include_tasks: tasks/ansible-requirements.yml
+#    - include_tasks: tasks/ansible-requirements.yml
     - include_tasks: tasks/ssh-keys.yml
     - include_tasks: tasks/timesync.yml
