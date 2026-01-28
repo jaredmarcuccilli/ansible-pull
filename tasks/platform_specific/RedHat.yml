@@ -1,0 +1,10 @@
+- name: Import roles
+  ansible.builtin.import_role:
+    name: "{{ item }}"
+  loop:
+    - fedora.linux_system_roles.aide
+    - fedora.linux_system_roles.firewall
+    - fedora.linux_system_roles.network
+    - fedora.linux_system_roles.selinux
+    - fedora.linux_system_roles.sshd
+    - fedora.linux_system_roles.timesync

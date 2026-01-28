@@ -1,6 +1,0 @@
----
-- name: Set root ssh keys
-  ansible.posix.authorized_key:
-    user: root
-    exclusive: true
-    key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDZeRiNSmN1RreB5bGb82REWk/QUfMjYzLfRtrecgCEu root@jump-alma9.ad.ryacom.org'

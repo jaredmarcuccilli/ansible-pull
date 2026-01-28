@@ -1,8 +1,30 @@
 ---
-- name: Include tasks
-  hosts: localhost
+- name: Configure local system using ansible-pull
+  hosts: all
   connection: local
   tasks:
-#    - include_tasks: tasks/ansible-requirements.yml
-    - include_tasks: tasks/ssh-keys.yml
-    - include_tasks: tasks/timesync.yml
+    - name: Include platform/version specific variables
+      ansible.builtin.include_vars:
+        file: "{{ __vars_file }}"
+      loop:
+        - "{{ ansible_facts['os_family'] }}.yml"
+        - "{{ ansible_facts['distribution'] }}.yml"
+        - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}.yml"
+        - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_version'] }}.yml"
+      vars:
+        __vars_file: "vars/platform_specific/{{ item }}"
+      when: __vars_file is file
+
+    - name: Include platform/version specific tasks
+      ansible.builtin.include_tasks:
+        file: "{{ lookup('ansible.builtin.first_found', __tasks_ff_params) }}"
+      vars:
+        __tasks_ff_params:
+          files:
+            - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_version'] }}.yml"
+            - "{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}.yml"
+            - "{{ ansible_facts['distribution'] }}.yml"
+            - "{{ ansible_facts['os_family'] }}.yml"
+          paths:
+          - "tasks/platform_specific"
+          skip: true

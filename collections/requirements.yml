@@ -1,6 +1,11 @@
 ---
 collections:
   - name: ansible.posix
-    source: https://galaxy.ansible.com
+    source: collections/archives/ansible-posix-2.1.0.tar.gz
+    type: file
+  - name: community.general
+    source: collections/archives/community-general-12.3.0.tar.gz
+    type: file
   - name: fedora.linux_system_roles
-    source: https://galaxy.ansible.com
+    source: collections/archives/fedora-linux_system_roles-1.115.3.tar.gz
+    type: file

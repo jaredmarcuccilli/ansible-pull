@@ -1,0 +1,23 @@
+---
+aide_db_fetch_dir: files
+aide_init: true
+aide_fetch_db: false
+aide_check: false
+aide_update: false
+network_state:
+  dns-resolver:
+    config:
+      search:
+        - corp.ryacom.org
+      server:
+        - 172.64.36.1
+        - 172.64.36.2
+        - 2a06:98c1:54::1:4d7e
+selinux_state: enforcing
+sshd:
+  PermitRootLogin: no
+  PasswordAuthentication: no
+  KbdInteractiveAuthentication: no
+timesync_ntp_servers:
+  - hostname: time.cloudflare.com
+    iburst: true
