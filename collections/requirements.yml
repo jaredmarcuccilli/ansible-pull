@@ -4,11 +4,11 @@ collections:
     source: collections/archives/ansible-posix-2.1.0.tar.gz
     type: file
   - name: community.general
-    source: collections/archives/community-general-12.3.0.tar.gz
+    source: collections/archives/community-general-11.4.4.tar.gz
     type: file
   - name: containers.podman
-    source: collections/archives/containers-podman-1.18.1.tar.gz
+    source: collections/archives/containers-podman-1.18.2.tar.gz
     type: file
   - name: fedora.linux_system_roles
-    source: collections/archives/fedora-linux_system_roles-1.118.0.tar.gz
+    source: collections/archives/fedora-linux_system_roles-1.119.0.tar.gz
     type: file
