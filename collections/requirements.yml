@@ -6,6 +6,9 @@ collections:
   - name: community.general
     source: collections/archives/community-general-12.3.0.tar.gz
     type: file
+  - name: containers.podman
+    source: collections/archives/containers-podman-1.18.1.tar.gz
+    type: file
   - name: fedora.linux_system_roles
-    source: collections/archives/fedora-linux_system_roles-1.115.3.tar.gz
+    source: collections/archives/fedora-linux_system_roles-1.118.0.tar.gz
     type: file

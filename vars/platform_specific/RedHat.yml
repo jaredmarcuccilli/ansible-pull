@@ -14,7 +14,7 @@ network_state:
         - 172.64.36.2
         - 2a06:98c1:54::1:4d7e
 selinux_state: enforcing
-sshd:
+sshd_config:
   PermitRootLogin: no
   PasswordAuthentication: no
   KbdInteractiveAuthentication: no
