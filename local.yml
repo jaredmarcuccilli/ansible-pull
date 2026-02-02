@@ -1,6 +1,6 @@
 ---
 - name: Configure local system using ansible-pull
-  hosts: all
+  hosts: localhost
   connection: local
   tasks:
     - name: Include platform/version specific variables

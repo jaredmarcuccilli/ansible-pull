@@ -1,9 +1,11 @@
 ---
+# fedora.linux_system_roles.aide
 aide_db_fetch_dir: files
 aide_init: true
 aide_fetch_db: false
 aide_check: false
 aide_update: false
+# fedora.linux_system_roles.network
 network_state:
   dns-resolver:
     config:
@@ -13,11 +15,14 @@ network_state:
         - 172.64.36.1
         - 172.64.36.2
         - 2a06:98c1:54::1:4d7e
+# fedora.linux_system_roles.selinux
 selinux_state: enforcing
+# fedora.linux_system_roles.sshd
 sshd_config:
   PermitRootLogin: no
   PasswordAuthentication: no
   KbdInteractiveAuthentication: no
+# fedora.linux_system_roles.timesync
 timesync_ntp_servers:
   - hostname: time.cloudflare.com
     iburst: true
